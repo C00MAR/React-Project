@@ -51,6 +51,7 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     height: 100%;
+    
     .categ {
         background-color: #eeeeee;
         flex-direction: column;

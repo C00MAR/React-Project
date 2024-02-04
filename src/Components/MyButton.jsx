@@ -50,7 +50,7 @@ const Button = styled.button`
         }
     }};
     transition: 0.2s ease-in-out;
-    width: 18%;
+    width: 80%;
     letter-spacing: 0;
     color: white;
     padding: 15px 32px;

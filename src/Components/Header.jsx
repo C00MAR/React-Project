@@ -75,6 +75,7 @@ const Container = styled.div`
         display: flex;
         padding-left: 10px;
         gap: 5px;
+        overflow: auto;
         
         button {
             width: 15px;
