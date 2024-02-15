@@ -39,18 +39,18 @@ export default function ProductScreen() {
         <Container>
             <CartProvider>
                 <Header />
-                <div class="productPage">
-                    <div class="productImage">
+                <div className="productPage">
+                    <div className="productImage">
                         <img src={product.image} alt="product_image" />
                     </div>
-                    <div class="Product-Comment">
-                        <div class="ProductInfo">
+                    <div className="Product-Comment">
+                        <div className="ProductInfo">
                             <h1>{product.title}</h1>
                             <p>{product.price} €</p>
-                            <MyButton labelBtn="Ajouter au Panier" variant="primary" onClickEvent={handleAddToCartBtn} class="btnATC"/>
+                            <MyButton labelBtn="Ajouter au Panier" variant="primary" onClickEvent={handleAddToCartBtn} className="btnATC"/>
                         </div>
-                        <div class="Comments">
-                            <div class="CreateCommentForm">
+                        <div className="Comments">
+                            <div className="CreateCommentForm">
                                 <h2>Create Comment</h2>
                                 <form onSubmit={handleSubmitComment}>
                                     <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)}/>
@@ -58,11 +58,11 @@ export default function ProductScreen() {
                                     <MyButton labelBtn="Submit" variant="primary" type="submit"/>
                                 </form>
                             </div>
-                            <div class="OtherComment">
+                            <div className="OtherComment">
                                 <h2>Comments :</h2>
                                 {otherComments.map((comment) => (
-                                    <div class="comment">
-                                        <div class="commentInfo">
+                                    <div className="comment">
+                                        <div className="commentInfo">
                                             <h3>{comment.username}</h3>
                                             <p>{comment.comment}</p>
                                         </div>

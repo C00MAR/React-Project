@@ -25,9 +25,9 @@ export default function HomeScreen() {
     return (
         <Container>
             <Header />
-            <div class="categ">
+            <div className="categ">
                 <h1 id="titre">New-/-Collection</h1>
-                <div class="">
+                <div className="">
                     {
                     !isLoading ?
                         data.slice().reverse().map((product) => {

@@ -8,7 +8,7 @@ import ProductCard from '../Components/ProductCard';
 
 export default function CartScreen() {
     const rawCartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
-    const { removeFromCart, emptyCart } = useContext(CartContext);
+    const { emptyCart } = useContext(CartContext);
     const cartContext = useContext(CartContext);
 
     const groupedCartItems = rawCartItems.reduce((acc, item) => {
@@ -23,12 +23,12 @@ export default function CartScreen() {
         <Container>
             <CartProvider>
                 <Header />
-                <div class="box">
+                <div className="box">
                     <h1 id="titre">Cart</h1>
                     {cartItems.length > 0 && (
                         <MyButton labelBtn="Vider le Panier" variant="primary" onClickEvent={emptyCart}/>
                     )}
-                    <div class="categ">
+                    <div className="categ">
                     {cartItems.length === 0 ? (
                         <p>Panier Vide !</p>
                     ) : (

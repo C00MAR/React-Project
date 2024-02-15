@@ -14,9 +14,9 @@ export default function ProductsScreen() {
         <Container>
             <CartProvider>
                 <Header />
-                <div class="box">
+                <div className="box">
                     <h1 id="titre">Products</h1>
-                    <div class="categ">
+                    <div className="categ">
                         {data?.map((product) => (
                             <ProductCard product={product} cartContext={cartContext} />
                         ))}

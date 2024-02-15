@@ -14,7 +14,7 @@ export default function ProductCard({ product }) {
     return (
         <Container>
             <img src={product.image} alt="product_image" />
-            <div class='info'>
+            <div className='info'>
                 <Link to={`/products/${product.id}`}>{product.title} = {product.price}€</Link>
                 <div>
                     <p>{(product.quantity * product.price).toFixed(2)} €</p>

@@ -16,9 +16,9 @@ export default function Header() {
 
     return (
         <Container>
-            <div class='nav'>
-                <Link to={"/"} class="logo_link">LA-/-MARQUE</Link>
-                <Link to={"/products"} class="product_link">Produits</Link>
+            <div className='nav'>
+                <Link to={"/"} className="logo_link">LA-/-MARQUE</Link>
+                <Link to={"/products"} className="product_link">Produits</Link>
                 <Link to={"/cart"}>
                     {itemCount > 0 ? (
                         <span>{itemCount}</span>
@@ -28,12 +28,12 @@ export default function Header() {
                     Panier
                 </Link>
             </div>
-            <div class='color_switcher'>
-                <button onClick="changeColorTheme" class='white'></button>
-                <button onClick="changeColorTheme" class='red'></button>
-                <button onClick="changeColorTheme" class='blue'></button>
-                <button onClick="changeColorTheme" class='green'></button>
-                <button onClick="changeColorTheme" class='yellow'></button>
+            <div className='color_switcher'>
+                <button onClick="changeColorTheme" className='white'></button>
+                <button onClick="changeColorTheme" className='red'></button>
+                <button onClick="changeColorTheme" className='blue'></button>
+                <button onClick="changeColorTheme" className='green'></button>
+                <button onClick="changeColorTheme" className='yellow'></button>
             </div>
         </Container>
     )
