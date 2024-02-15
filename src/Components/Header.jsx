@@ -1,15 +1,32 @@
-import React from 'react';
-import styled from "styled-components";
-import { Link } from 'react-router-dom'
-
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import CartContext from '../Contexts/CartContext';
 
 export default function Header() {
+    const location = useLocation();
+    const [itemCount, setItemCount] = useState(0);
+    const cartContext = useContext(CartContext);
+   
+    useEffect(() => {
+        const storedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+        setItemCount(storedCartItems ? storedCartItems.length : 0);
+    }, [location, cartContext]);
+
     return (
         <Container>
             <div class='nav'>
                 <Link to={"/"} class="logo_link">LA-/-MARQUE</Link>
                 <Link to={"/products"} class="product_link">Produits</Link>
-                <Link to={"/cart"}>Panier</Link>
+                <Link to={"/cart"}>
+                    {itemCount > 0 ? (
+                        <span>{itemCount}</span>
+                    ) : (
+                        <span>0</span>
+                    )} - 
+                    Panier
+                </Link>
             </div>
             <div class='color_switcher'>
                 <button onClick="changeColorTheme" class='white'></button>

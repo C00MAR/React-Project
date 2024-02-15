@@ -33,14 +33,14 @@ function App() {
     setDataUser(dataUser)
   }
 
-  let { data, isLoading } = useGetProductsQuery()
-  let [ createArticle ] = useCreateArticleMutation() 
+  // let { data, isLoading } = useGetProductsQuery()
+  // let [ createArticle ] = useCreateArticleMutation() 
 
   return (
     <div className="App">
       <header className="App-header">
         <Header />
-        {
+        {/* {
           !isLoading ?
             data.slice().reverse().map((article) => {
               return <div>
@@ -55,7 +55,7 @@ function App() {
           }}
         >
           Create Article
-        </button>
+        </button> */}
         <MyButton labelBtn="TEST" onClickEvent={onClickEvent}/>
         <MyInput id="name" typeOfInput="text" placeholder="Nom" onChangeEvent={onInputChange}/>
         <MyInput id="firstname" typeOfInput="text" placeholder="Prénom" onChangeEvent={onInputChange}/>

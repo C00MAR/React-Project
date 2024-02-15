@@ -9,13 +9,13 @@ export default function ProductCard({ product }) {
 
     const handleAddToCartBtn = () => {
         addToCart(product);
-    };
+        };
 
     return (
         <Container>
             <img src={product.image} alt="product_image" />
             <div class='info'>
-                <Link to={"/"} class="logo_link">{product.title} = {product.price}€</Link>
+                <Link to={`/products/${product.id}`}>{product.title} = {product.price}€</Link>
                 <div>
                     <p>{(product.quantity * product.price).toFixed(2)} €</p>
                     <p>x {product.quantity}</p>

@@ -9,15 +9,17 @@ export const productApi = createApi({
             query: () => `/products`,
             providesTags: ['products']
         }),
-        createArticle: builder.mutation({
+        getProductComments: builder.query({
+            query: (productId) => `/products/${productId}/comments`,
+        }),
+        postProductComment: builder.mutation({
             query: (data) => ({
-                url: `/products`,
+                url: `/products/${data.productId}/comments`,
                 method: 'POST',
                 body: data,
-            }),
-            invalidatesTags: ['products']
+            })
         })
     }),
 })
 
-export const { useGetProductsQuery, useCreateArticleMutation } = productApi
+export const { useGetProductsQuery, useGetProductCommentsQuery, usePostProductCommentMutation } = productApi
