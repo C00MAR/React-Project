@@ -9,15 +9,17 @@ export default function ProductCard({ product }) {
 
     const handleAddToCartBtn = () => {
         addToCart(product);
-        console.log("good")
     };
 
     return (
         <Container>
             <img src={product.image} alt="product_image" />
             <div class='info'>
-                <Link to={"/"} class="logo_link">{product.title}</Link>
-                <p>{product.price} €</p>
+                <Link to={"/"} class="logo_link">{product.title} = {product.price}€</Link>
+                <div>
+                    <p>{(product.quantity * product.price).toFixed(2)} €</p>
+                    <p>x {product.quantity}</p>
+                </div>
                 <MyButton labelBtn="Ajouter au Panier" variant="primary" onClickEvent={handleAddToCartBtn}/>
             </div>
         </Container>
@@ -57,11 +59,24 @@ const Container = styled.div`
             color: #000;
             transition: 0.3s ease-in-out;
             border-bottom: 1px solid transparent;
-            font-size: 1.5em;
+            font-size: 1.4em;
             font-weight: 700;
 
             &:hover {
                 border-bottom: 1px solid black;
+            }
+        }
+
+        div {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 10px;
+            width: 50%;
+
+            p {
+                font-size: 1.1em;
+                font-weight: 400;
             }
         }
     }

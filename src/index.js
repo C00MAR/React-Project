@@ -9,6 +9,8 @@ import ProductScreen from './pages/ProductScreen';
 import ProductsScreen from './pages/ProductsScreen';
 import NotFoundPage from './pages/NotFoundPage';
 import CartScreen from './pages/CartScreen';
+import CartProvider from './Contexts/CartProvider';
+
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -41,7 +43,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </Provider>
   </React.StrictMode>
 );

@@ -7,19 +7,8 @@ import CartProvider from '../Contexts/CartProvider';
 import { useGetProductsQuery, useCreateArticleMutation } from '../Services/API';
 
 export default function ProductsScreen() {
-    let { data, isLoading } = useGetProductsQuery();
+    let { data } = useGetProductsQuery();
     const cartContext = useContext(CartContext);
-
-    const products = [
-        { id: 1, name: 'Product 1', price: 100 },
-        { id: 2, name: 'Product 2', price: 200 },
-        { id: 3, name: 'Product 3', price: 300 },
-        { id: 4, name: 'Product 4', price: 400 },
-    ];
-
-    const onClickEvent = () => {
-        console.log("good")
-    };
 
     return (
         <Container>
@@ -69,7 +58,6 @@ const Container = styled.div`
         }
 
         .categ {
-            background-color: #eeeeee;
             display: -webkit-box;
             width: 80vw;
             flex-wrap: wrap;
